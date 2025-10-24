@@ -1,0 +1,5 @@
+{
+  "name": "PromptEngine",
+  "description": "An AI-powered application to generate, test, and manage optimized prompts for Large Language Models. Streamline your prompt engineering workflow with history, rating, and testing features.",
+  "requestFramePermissions": []
+}
