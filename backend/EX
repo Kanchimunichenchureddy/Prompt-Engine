@@ -1,0 +1,128 @@
+# 🚀 BACKEND RUNNING COMMANDS - EXACT INSTRUCTIONS
+
+## ✅ **RECOMMENDED COMMAND (Works in any environment)**
+
+### **Option 1: Direct Python (RECOMMENDED)**
+```bash
+cd Prompt-Engine\backend
+python main.py
+```
+
+### **Option 2: One-Click Script**
+```bash
+# Double-click this file OR run in PowerShell:
+START_SERVER.bat
+```
+
+### **Option 3: Virtual Environment**
+```bash
+cd Prompt-Engine\backend
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+python main.py
+```
+
+## 🧪 **TEST YOUR BACKEND (Copy & Paste These Commands)**
+
+### **1. Test Health Check**
+```bash
+curl http://localhost:3002/api/health
+```
+
+### **2. Test Prompt Generation**
+```bash
+curl -X POST "http://localhost:3002/api/generate" -H "Content-Type: application/json" -d "{\"idea\": \"Create a Python calculator\"}"
+```
+
+### **3. Test Prompt History**
+```bash
+curl http://localhost:3002/api/prompts
+```
+
+## 📋 **FULL COMMAND REFERENCE**
+
+### **Starting the Backend**
+
+#### **Method 1: Python Direct (RECOMMENDED)**
+```bash
+cd Prompt-Engine\backend
+python main.py
+```
+
+#### **Method 2: Using uvicorn**
+```bash
+cd Prompt-Engine\backend
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+#### **Method 3: Python with uvicorn**
+```bash
+cd Prompt-Engine\backend
+python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+#### **Method 4: With All Dependencies**
+```bash
+cd Prompt-Engine\backend
+pip install fastapi uvicorn sqlalchemy pymysql pydantic python-multipart python-dotenv requests
+python main.py
+```
+
+### **Installation Commands**
+
+#### **Install Dependencies**
+```bash
+pip install -r requirements.txt
+```
+
+#### **Manual Dependencies**
+```bash
+pip install fastapi uvicorn sqlalchemy pymysql pydantic python-multipart python-dotenv google-generativeai
+```
+
+## 🎯 **COMPLETE WORKFLOW**
+
+### **Step 1: Navigate to Backend**
+```bash
+cd Prompt-Engine\backend
+```
+
+### **Step 2: Start Server**
+```bash
+python main.py
+```
+
+### **Step 3: Test in New Terminal**
+```bash
+curl http://localhost:8000/api/health
+```
+
+### **Step 4: Generate Test Prompt**
+```bash
+curl -X POST "http://localhost:8000/api/generate" -H "Content-Type: application/json" -d "{\"idea\": \"Create a web app\"}"
+```
+
+## ⚡ **QUICK FIXES**
+
+### **"uvicorn is not recognized"**
+```bash
+# Use Python instead
+python main.py
+```
+
+### **"No module named 'fastapi'"**
+```bash
+# Install dependencies
+pip install -r requirements.txt
+```
+
+---
+
+## 🚀 **START HERE - COPY THIS COMMAND:**
+
+```bash
+cd Prompt-Engine\backend && python main.py
+```
+
+**That's it! Your backend will start and be ready to use!**

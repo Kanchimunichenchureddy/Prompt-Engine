@@ -1,0 +1,231 @@
+# 🚀 BACKEND RUNNING COMMANDS - EXACT INSTRUCTIONS
+
+## ✅ **RECOMMENDED COMMAND (Works in any environment)**
+
+### **Option 1: Direct Python (RECOMMENDED)**
+```bash
+cd Prompt-Engine\backend
+python main.py
+```
+
+### **Option 2: One-Click Script**
+```bash
+# Double-click this file OR run in PowerShell:
+START_SERVER.bat
+```
+
+### **Option 3: Virtual Environment**
+```bash
+cd Prompt-Engine\backend
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+python main.py
+```
+
+## 🧪 **TEST YOUR BACKEND (Copy & Paste These Commands)**
+
+### **1. Test Health Check**
+```bash
+curl http://localhost:3002/api/health
+```
+
+### **2. Test Prompt Generation**
+```bash
+curl -X POST "http://localhost:3002/api/generate" -H "Content-Type: application/json" -d "{\"idea\": \"Create a Python calculator\"}"
+```
+
+### **3. Test Prompt History**
+```bash
+curl http://localhost:3002/api/prompts
+```
+
+## 📋 **FULL COMMAND REFERENCE**
+
+### **Starting the Backend**
+
+#### **Method 1: Python Direct (RECOMMENDED)**
+```bash
+cd Prompt-Engine\backend
+python main.py
+```
+
+#### **Method 2: Using uvicorn**
+```bash
+cd Prompt-Engine\backend
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+#### **Method 3: Python with uvicorn**
+```bash
+cd Prompt-Engine\backend
+python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+#### **Method 4: With All Dependencies**
+```bash
+cd Prompt-Engine\backend
+pip install fastapi uvicorn sqlalchemy pymysql pydantic python-multipart python-dotenv requests
+python main.py
+```
+
+### **Installation Commands**
+
+#### **Install Dependencies**
+```bash
+pip install -r requirements.txt
+```
+
+#### **Manual Dependencies**
+```bash
+pip install fastapi uvicorn sqlalchemy pymysql pydantic python-multipart python-dotenv google-generativeai
+```
+
+#### **Global Installation (if venv doesn't work)**
+```bash
+pip install --user fastapi uvicorn sqlalchemy pymysql pydantic python-multipart python-dotenv google-generativeai
+```
+
+### **Docker Commands**
+
+#### **Build and Run**
+```bash
+cd Prompt-Engine\backend
+docker build -t prompt-engine-backend .
+docker run -p 8000:8000 -e DATABASE_URL=mysql+pymysql://user:password@localhost/prompt_engine prompt-engine-backend
+```
+
+#### **Docker Compose**
+```bash
+cd Prompt-Engine\backend
+docker-compose up -d
+```
+
+### **Frontend Integration**
+
+#### **Update Frontend .env.local**
+```env
+VITE_API_URL=http://localhost:8000
+```
+
+#### **Start Frontend**
+```bash
+cd Prompt-Engine
+npm install
+npm run dev
+```
+
+## 🔧 **TROUBLESHOOTING COMMANDS**
+
+### **Check Python Version**
+```bash
+python --version
+```
+
+### **Check Installed Packages**
+```bash
+pip list | findstr fastapi
+pip list | findstr uvicorn
+```
+
+### **Check if Port is Available**
+```bash
+netstat -ano | findstr :8000
+```
+
+### **Kill Process on Port**
+```bash
+taskkill /PID <process_id> /F
+```
+
+### **Test Database Connection**
+```bash
+# Test MySQL (if configured)
+mysql -u root -p -e "SHOW DATABASES;"
+
+# Test SQLite (automatic)
+python -c "import sqlite3; print('SQLite available')"
+```
+
+## 📱 **ACCESS YOUR WORKING BACKEND**
+
+### **Current Running Instance**
+- **Backend**: http://localhost:3002
+- **Documentation**: http://localhost:3002/docs
+- **Health Check**: http://localhost:3002/api/health
+
+### **New Instance (when you run the commands above)**
+- **Backend**: http://localhost:8000
+- **Documentation**: http://localhost:8000/docs
+- **Health Check**: http://localhost:8000/api/health
+
+## 🎯 **COMPLETE WORKFLOW**
+
+### **Step 1: Navigate to Backend**
+```bash
+cd Prompt-Engine\backend
+```
+
+### **Step 2: Install Dependencies (if needed)**
+```bash
+pip install -r requirements.txt
+```
+
+### **Step 3: Start Server**
+```bash
+python main.py
+```
+
+### **Step 4: Test in New Terminal**
+```bash
+curl http://localhost:8000/api/health
+```
+
+### **Step 5: Generate Test Prompt**
+```bash
+curl -X POST "http://localhost:8000/api/generate" -H "Content-Type: application/json" -d "{\"idea\": \"Create a web app\"}"
+```
+
+## ⚡ **QUICK FIXES**
+
+### **"uvicorn is not recognized"**
+```bash
+# Use Python instead
+python main.py
+
+# Or install uvicorn
+pip install uvicorn
+uvicorn main:app --reload
+```
+
+### **"No module named 'fastapi'"**
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Or install specific packages
+pip install fastapi uvicorn python-multipart python-dotenv
+```
+
+### **"Port already in use"**
+```bash
+# The server will automatically find available port 8001, 8002, etc.
+python main.py
+```
+
+### **"Database connection failed"**
+```bash
+# Backend will automatically use SQLite fallback
+# No action needed - it works out of the box!
+python main.py
+```
+
+---
+
+## 🚀 **START HERE - COPY THIS COMMAND:**
+
+```bash
+cd Prompt-Engine\backend && python main.py
+```
+
+**That's it! Your backend will start and be ready to use!**
